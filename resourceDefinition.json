@@ -184,7 +184,6 @@
     "scope": "parent",
     "slug": "npl",
     "dashes": false,
-    "lowercase": false,
     "regex": "\"[^0-9a-z]\""
   },
   {
@@ -196,7 +195,6 @@
     "scope": "parent",
     "slug": "npw",
     "dashes": false,
-    "lowercase": false,
     "regex": "\"[^0-9a-z]\""
   },
   {
