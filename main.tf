@@ -206,6 +206,27 @@ locals {
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
     }
+    aks_node_pool_linux = {
+      name        = substr(join("-", compact([local.prefix, "npl", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "npl", local.suffix_unique])), 0, 80)
+      dashes      = false
+      slug        = "npl"
+      min_length  = 1
+      max_length  = 12
+      scope       = "parent"
+      regex       = "\"[^0-9a-z]\""
+
+    }
+    aks_node_pool_windows = {
+      name        = substr(join("-", compact([local.prefix, "npw", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "npw", local.suffix_unique])), 0, 80)
+      dashes      = false
+      slug        = "npw"
+      min_length  = 1
+      max_length  = 6
+      scope       = "parent"
+      regex       = "\"[^0-9a-z]\""
+    }
     batch_account = {
       name        = substr(join("", compact([local.prefix_safe, "ba", local.suffix_safe])), 0, 24)
       name_unique = substr(join("", compact([local.prefix_safe, "ba", local.suffix_unique_safe])), 0, 24)

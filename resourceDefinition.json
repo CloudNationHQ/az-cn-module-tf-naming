@@ -176,6 +176,30 @@
     "dashes": true
   },
   {
+    "name": "aks_node_pool_linux",
+    "length": {
+      "min": 1,
+      "max": 12
+    },
+    "scope": "parent",
+    "slug": "npl",
+    "dashes": false,
+    "lowercase": false,
+    "regex": "\"[^0-9a-z]\""
+  },
+  {
+    "name": "aks_node_pool_windows",
+    "length": {
+      "min": 1,
+      "max": 6
+    },
+    "scope": "parent",
+    "slug": "npw",
+    "dashes": false,
+    "lowercase": false,
+    "regex": "\"[^0-9a-z]\""
+  },
+  {
     "name": "bastion_host",
     "length": {
       "min": 1,

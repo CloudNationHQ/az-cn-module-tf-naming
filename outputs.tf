@@ -21,6 +21,16 @@ output "app_configuration" {
   description = "App Configuration"
 }
 
+output "aks_node_pool_linux" {
+  value       = local.az.aks_node_pool_linux
+  description = "Aks Node Pool Linux"
+}
+
+output "aks_node_pool_windows" {
+  value       = local.az.aks_node_pool_windows
+  description = "Aks Node Pool Windows"
+}
+
 output "app_service" {
   value       = local.az.app_service
   description = "App Service"
