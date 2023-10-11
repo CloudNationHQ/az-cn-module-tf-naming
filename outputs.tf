@@ -50,6 +50,11 @@ output "application_gateway" {
   description = "Application Gateway"
 }
 
+output "virtual_hub_connection" {
+  value       = local.az.virtual_hub_connection
+  description = "Virtual Hub Connection"
+}
+
 output "application_insights" {
   value       = local.az.application_insights
   description = "Application Insights"

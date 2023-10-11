@@ -96,6 +96,16 @@ locals {
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9-]+$"
     }
+    virtual_hub_connection = {
+      name        = substr(join("-", compact([local.prefix, "vhcon", local.suffix])), 0, 40)
+      name_unique = substr(join("-", compact([local.prefix, "vhcon", local.suffix_unique])), 0, 40)
+      dashes      = true
+      slug        = "vhcon"
+      min_length  = 1
+      max_length  = 80
+      scope       = "parent"
+      regex       = "\"[^0-9A-Za-z_.-]\""
+    }
     application_gateway = {
       name        = substr(join("-", compact([local.prefix, "agw", local.suffix])), 0, 80)
       name_unique = substr(join("-", compact([local.prefix, "agw", local.suffix_unique])), 0, 80)
