@@ -865,11 +865,6 @@ output "private_dns_zone_group" {
   description = "Private Dns Zone Group"
 }
 
-output "private_endpoint" {
-  value       = local.az.private_endpoint
-  description = "Private Endpoint"
-}
-
 output "private_link_service" {
   value       = local.az.private_link_service
   description = "Private Link Service"
