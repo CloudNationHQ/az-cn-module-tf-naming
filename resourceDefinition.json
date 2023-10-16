@@ -242,6 +242,17 @@
     "dashes": true
   },
   {
+    "name": "private_endpoint",
+    "length": {
+      "min": 2,
+      "max": 64
+    },
+    "scope": "resourceGroup",
+    "slug": "pe",
+    "dashes": true,
+    "regex": "\"[^0-9A-Za-z_.-]\""
+  },
+  {
     "name": "batch_certificate",
     "length": {
       "min": 5,

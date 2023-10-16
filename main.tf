@@ -186,6 +186,16 @@ locals {
       scope       = "parent"
       regex       = "^[^<>*%:.?\\+\\/]+[^<>*%:.?\\+\\/ ]$"
     }
+    private_endpoint = {
+      name        = substr(join("-", compact([local.prefix, "pe", local.suffix])), 0, 64)
+      name_unique = substr(join("-", compact([local.prefix, "pe", local.suffix_unique])), 0, 64)
+      dashes      = true
+      slug        = "pe"
+      min_length  = 2
+      max_length  = 64
+      scope       = "resourceGroup"
+      regex       = "\"[^0-9A-Za-z_.-]\""
+    }
     automation_variable = {
       name        = substr(join("-", compact([local.prefix, "aavar", local.suffix])), 0, 128)
       name_unique = substr(join("-", compact([local.prefix, "aavar", local.suffix_unique])), 0, 128)

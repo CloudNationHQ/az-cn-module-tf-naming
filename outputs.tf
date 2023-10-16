@@ -385,6 +385,11 @@ output "dns_ptr_record" {
   description = "Dns Ptr Record"
 }
 
+output "private_endpoint" {
+  value       = local.az.private_endpoint
+  description = "Private Endpoint"
+}
+
 output "dns_txt_record" {
   value       = local.az.dns_txt_record
   description = "Dns Txt Record"
