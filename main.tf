@@ -96,16 +96,6 @@ locals {
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9-]+$"
     }
-    virtual_hub_connection = {
-      name        = substr(join("-", compact([local.prefix, "vhcon", local.suffix])), 0, 40)
-      name_unique = substr(join("-", compact([local.prefix, "vhcon", local.suffix_unique])), 0, 40)
-      dashes      = true
-      slug        = "vhcon"
-      min_length  = 1
-      max_length  = 80
-      scope       = "parent"
-      regex       = "\"[^0-9A-Za-z_.-]\""
-    }
     application_gateway = {
       name        = substr(join("-", compact([local.prefix, "agw", local.suffix])), 0, 80)
       name_unique = substr(join("-", compact([local.prefix, "agw", local.suffix_unique])), 0, 80)
@@ -185,16 +175,6 @@ locals {
       max_length  = 128
       scope       = "parent"
       regex       = "^[^<>*%:.?\\+\\/]+[^<>*%:.?\\+\\/ ]$"
-    }
-    private_endpoint = {
-      name        = substr(join("-", compact([local.prefix, "pe", local.suffix])), 0, 64)
-      name_unique = substr(join("-", compact([local.prefix, "pe", local.suffix_unique])), 0, 64)
-      dashes      = true
-      slug        = "pe"
-      min_length  = 2
-      max_length  = 64
-      scope       = "resourceGroup"
-      regex       = "\"[^0-9A-Za-z_.-]\""
     }
     automation_variable = {
       name        = substr(join("-", compact([local.prefix, "aavar", local.suffix])), 0, 128)
@@ -386,6 +366,26 @@ locals {
       max_length  = 64
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+$"
+    }
+    container_app = {
+      name        = substr(join("-", compact([local.prefix, "cg", local.suffix])), 0, 32)
+      name_unique = substr(join("-", compact([local.prefix, "cg", local.suffix_unique])), 0, 32)
+      dashes      = true
+      slug        = "ca"
+      min_length  = 2
+      max_length  = 32
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+    }
+    container_app_environment = {
+      name        = substr(join("-", compact([local.prefix, "cg", local.suffix])), 0, 60)
+      name_unique = substr(join("-", compact([local.prefix, "cg", local.suffix_unique])), 0, 60)
+      dashes      = true
+      slug        = "cae"
+      min_length  = 2
+      max_length  = 60
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
     }
     container_group = {
       name        = substr(join("-", compact([local.prefix, "cg", local.suffix])), 0, 63)
@@ -1758,14 +1758,14 @@ locals {
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$"
     }
     private_endpoint = {
-      name        = substr(join("-", compact([local.prefix, "pe", local.suffix])), 0, 80)
-      name_unique = substr(join("-", compact([local.prefix, "pe", local.suffix_unique])), 0, 80)
+      name        = substr(join("-", compact([local.prefix, "pe", local.suffix])), 0, 64)
+      name_unique = substr(join("-", compact([local.prefix, "pe", local.suffix_unique])), 0, 64)
       dashes      = true
       slug        = "pe"
-      min_length  = 1
-      max_length  = 80
+      min_length  = 2
+      max_length  = 64
       scope       = "resourceGroup"
-      regex       = "^[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$"
+      regex       = "\"[^0-9A-Za-z_.-]\""
     }
     private_link_service = {
       name        = substr(join("-", compact([local.prefix, "pls", local.suffix])), 0, 80)
@@ -2326,6 +2326,16 @@ locals {
       max_length  = 128
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9-_]+$"
+    }
+    virtual_hub_connection = {
+      name        = substr(join("-", compact([local.prefix, "vhcon", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "vhcon", local.suffix_unique])), 0, 80)
+      dashes      = true
+      slug        = "vhcon"
+      min_length  = 1
+      max_length  = 80
+      scope       = "parent"
+      regex       = "\"[^0-9A-Za-z_.-]\""
     }
     virtual_machine = {
       name        = substr(join("-", compact([local.prefix, "vm", local.suffix])), 0, 15)
