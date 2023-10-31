@@ -368,8 +368,8 @@ locals {
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+$"
     }
     container_app = {
-      name        = substr(join("-", compact([local.prefix, "cg", local.suffix])), 0, 32)
-      name_unique = substr(join("-", compact([local.prefix, "cg", local.suffix_unique])), 0, 32)
+      name        = substr(join("-", compact([local.prefix, "ca", local.suffix])), 0, 32)
+      name_unique = substr(join("-", compact([local.prefix, "ca", local.suffix_unique])), 0, 32)
       dashes      = true
       slug        = "ca"
       min_length  = 2
@@ -378,8 +378,8 @@ locals {
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
     }
     container_app_environment = {
-      name        = substr(join("-", compact([local.prefix, "cg", local.suffix])), 0, 60)
-      name_unique = substr(join("-", compact([local.prefix, "cg", local.suffix_unique])), 0, 60)
+      name        = substr(join("-", compact([local.prefix, "cae", local.suffix])), 0, 60)
+      name_unique = substr(join("-", compact([local.prefix, "cae", local.suffix_unique])), 0, 60)
       dashes      = true
       slug        = "cae"
       min_length  = 2
