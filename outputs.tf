@@ -50,11 +50,6 @@ output "application_gateway" {
   description = "Application Gateway"
 }
 
-output "virtual_hub_connection" {
-  value       = local.az.virtual_hub_connection
-  description = "Virtual Hub Connection"
-}
-
 output "application_insights" {
   value       = local.az.application_insights
   description = "Application Insights"
@@ -173,6 +168,16 @@ output "cdn_profile" {
 output "cognitive_account" {
   value       = local.az.cognitive_account
   description = "Cognitive Account"
+}
+
+output "container_app" {
+  value       = local.az.container_app
+  description = "Container App"
+}
+
+output "container_app_environment" {
+  value       = local.az.container_app_environment
+  description = "Container App Environment"
 }
 
 output "container_group" {
@@ -383,11 +388,6 @@ output "dns_ns_record" {
 output "dns_ptr_record" {
   value       = local.az.dns_ptr_record
   description = "Dns Ptr Record"
-}
-
-output "private_endpoint" {
-  value       = local.az.private_endpoint
-  description = "Private Endpoint"
 }
 
 output "dns_txt_record" {
@@ -865,6 +865,11 @@ output "private_dns_zone_group" {
   description = "Private Dns Zone Group"
 }
 
+output "private_endpoint" {
+  value       = local.az.private_endpoint
+  description = "Private Endpoint"
+}
+
 output "private_link_service" {
   value       = local.az.private_link_service
   description = "Private Link Service"
@@ -1143,6 +1148,11 @@ output "traffic_manager_profile" {
 output "user_assigned_identity" {
   value       = local.az.user_assigned_identity
   description = "User Assigned Identity"
+}
+
+output "virtual_hub_connection" {
+  value       = local.az.virtual_hub_connection
+  description = "Virtual Hub Connection"
 }
 
 output "virtual_machine" {
