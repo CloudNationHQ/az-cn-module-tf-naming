@@ -6,6 +6,16 @@ output "unique-seed" {
 output "validation" {
   value = local.validation
 }
+output "aks_node_pool_linux" {
+  value       = local.az.aks_node_pool_linux
+  description = "Aks Node Pool Linux"
+}
+
+output "aks_node_pool_windows" {
+  value       = local.az.aks_node_pool_windows
+  description = "Aks Node Pool Windows"
+}
+
 output "analysis_services_server" {
   value       = local.az.analysis_services_server
   description = "Analysis Services Server"
@@ -21,23 +31,14 @@ output "app_configuration" {
   description = "App Configuration"
 }
 
-output "aks_node_pool_linux" {
-  value       = local.az.aks_node_pool_linux
-  description = "Aks Node Pool Linux"
-}
-
-output "aks_node_pool_windows" {
-  value       = local.az.aks_node_pool_windows
-  description = "Aks Node Pool Windows"
-}
-
 output "app_service" {
   value       = local.az.app_service
   description = "App Service"
 }
 
 output "app_service_environment" {
-  value = local.az.app_service_environment
+  value       = local.az.app_service_environment
+  description = "App Service Environment"
 }
 
 output "app_service_plan" {
@@ -863,6 +864,11 @@ output "private_dns_zone" {
 output "private_dns_zone_group" {
   value       = local.az.private_dns_zone_group
   description = "Private Dns Zone Group"
+}
+
+output "private_endpoint" {
+  value       = local.az.private_endpoint
+  description = "Private Endpoint"
 }
 
 output "private_endpoint" {
