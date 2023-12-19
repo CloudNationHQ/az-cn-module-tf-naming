@@ -11,6 +11,16 @@ output "aks_node_pool_linux" {
   description = "Aks Node Pool Linux"
 }
 
+output "aks_node_pool_linux" {
+  value       = local.az.aks_node_pool_linux
+  description = "Aks Node Pool Linux"
+}
+
+output "aks_node_pool_windows" {
+  value       = local.az.aks_node_pool_windows
+  description = "Aks Node Pool Windows"
+}
+
 output "aks_node_pool_windows" {
   value       = local.az.aks_node_pool_windows
   description = "Aks Node Pool Windows"
@@ -864,11 +874,6 @@ output "private_dns_zone" {
 output "private_dns_zone_group" {
   value       = local.az.private_dns_zone_group
   description = "Private Dns Zone Group"
-}
-
-output "private_endpoint" {
-  value       = local.az.private_endpoint
-  description = "Private Endpoint"
 }
 
 output "private_endpoint" {
