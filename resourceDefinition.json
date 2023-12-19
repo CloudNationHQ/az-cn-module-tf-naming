@@ -69,9 +69,9 @@
     "name": "app_service_environment",
     "length": {
       "min": 1,
-      "max": 40
+      "max": 36
     },
-    "regex": "^(?=.{1,40}$)[a-zA-Z0-9-]+$",
+    "regex": "^(?=.{1,36}$)[a-zA-Z0-9-]+$",
     "scope": "resourceGroup",
     "slug": "ase",
     "dashes": true

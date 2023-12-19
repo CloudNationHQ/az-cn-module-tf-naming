@@ -97,12 +97,12 @@ locals {
       regex       = "^[a-z0-9][a-zA-Z0-9-]+[a-z0-9]"
     }
     app_service_environment = {
-      name        = substr(join("-", compact([local.prefix, "ase", local.suffix])), 0, 40)
-      name_unique = substr(join("-", compact([local.prefix, "ase", local.suffix_unique])), 0, 40)
+      name        = substr(join("-", compact([local.prefix, "ase", local.suffix])), 0, 36)
+      name_unique = substr(join("-", compact([local.prefix, "ase", local.suffix_unique])), 0, 36)
       dashes      = true
       slug        = "ase"
       min_length  = 1
-      max_length  = 40
+      max_length  = 36
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9-]+$"
     }
