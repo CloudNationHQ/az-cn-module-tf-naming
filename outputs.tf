@@ -11,16 +11,6 @@ output "aks_node_pool_linux" {
   description = "Aks Node Pool Linux"
 }
 
-output "aks_node_pool_linux" {
-  value       = local.az.aks_node_pool_linux
-  description = "Aks Node Pool Linux"
-}
-
-output "aks_node_pool_windows" {
-  value       = local.az.aks_node_pool_windows
-  description = "Aks Node Pool Windows"
-}
-
 output "aks_node_pool_windows" {
   value       = local.az.aks_node_pool_windows
   description = "Aks Node Pool Windows"

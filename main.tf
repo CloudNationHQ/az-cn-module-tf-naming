@@ -37,24 +37,14 @@ locals {
   // https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging
   az = {
     aks_node_pool_linux = {
-      name        = substr(join("", compact([local.prefix_safe, "npl", local.suffix_safe])), 0, 12)
-      name_unique = substr(join("", compact([local.prefix_safe, "npl", local.suffix_unique_safe])), 0, 12)
+      name        = substr(join("", compact([local.prefix_safe, "npl", local.suffix_safe])), 0, 11)
+      name_unique = substr(join("", compact([local.prefix_safe, "npl", local.suffix_unique_safe])), 0, 11)
       dashes      = false
       slug        = "npl"
       min_length  = 1
-      max_length  = 12
+      max_length  = 11
       scope       = "parent"
-      regex       = ""[^0-9a-z]""
-    }
-    aks_node_pool_linux = {
-      name        = substr(join("", compact([local.prefix_safe, "npl", local.suffix_safe])), 0, 12)
-      name_unique = substr(join("", compact([local.prefix_safe, "npl", local.suffix_unique_safe])), 0, 12)
-      dashes      = false
-      slug        = "npl"
-      min_length  = 1
-      max_length  = 12
-      scope       = "parent"
-      regex       = ""[^0-9a-z]""
+      regex       = "^[a-z][a-z0-9]*$"
     }
     aks_node_pool_windows = {
       name        = substr(join("", compact([local.prefix_safe, "npw", local.suffix_safe])), 0, 6)
@@ -64,17 +54,7 @@ locals {
       min_length  = 1
       max_length  = 6
       scope       = "parent"
-      regex       = ""[^0-9a-z]""
-    }
-    aks_node_pool_windows = {
-      name        = substr(join("", compact([local.prefix_safe, "npw", local.suffix_safe])), 0, 6)
-      name_unique = substr(join("", compact([local.prefix_safe, "npw", local.suffix_unique_safe])), 0, 6)
-      dashes      = false
-      slug        = "npw"
-      min_length  = 1
-      max_length  = 6
-      scope       = "parent"
-      regex       = ""[^0-9a-z]""
+      regex       = "^[a-z][a-z0-9]*$"
     }
     analysis_services_server = {
       name        = substr(join("", compact([local.prefix_safe, "as", local.suffix_safe])), 0, 63)
@@ -2471,14 +2451,6 @@ locals {
     aks_node_pool_linux = {
       valid_name        = length(regexall(local.az.aks_node_pool_linux.regex, local.az.aks_node_pool_linux.name)) > 0 && length(local.az.aks_node_pool_linux.name) > local.az.aks_node_pool_linux.min_length
       valid_name_unique = length(regexall(local.az.aks_node_pool_linux.regex, local.az.aks_node_pool_linux.name_unique)) > 0
-    }
-    aks_node_pool_linux = {
-      valid_name        = length(regexall(local.az.aks_node_pool_linux.regex, local.az.aks_node_pool_linux.name)) > 0 && length(local.az.aks_node_pool_linux.name) > local.az.aks_node_pool_linux.min_length
-      valid_name_unique = length(regexall(local.az.aks_node_pool_linux.regex, local.az.aks_node_pool_linux.name_unique)) > 0
-    }
-    aks_node_pool_windows = {
-      valid_name        = length(regexall(local.az.aks_node_pool_windows.regex, local.az.aks_node_pool_windows.name)) > 0 && length(local.az.aks_node_pool_windows.name) > local.az.aks_node_pool_windows.min_length
-      valid_name_unique = length(regexall(local.az.aks_node_pool_windows.regex, local.az.aks_node_pool_windows.name_unique)) > 0
     }
     aks_node_pool_windows = {
       valid_name        = length(regexall(local.az.aks_node_pool_windows.regex, local.az.aks_node_pool_windows.name)) > 0 && length(local.az.aks_node_pool_windows.name) > local.az.aks_node_pool_windows.min_length
